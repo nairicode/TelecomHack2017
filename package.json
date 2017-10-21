@@ -4,21 +4,35 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"fix-android": "sed -i '' '15d' node_modules/react-native-call-log/android/src/main/java/com/wscodelabs/callLogs/CallLogPackage.java ",
 		"test": "jest"
 	},
 	"dependencies": {
+		"crypto": "^1.0.1",
+		"crypto-js": "^3.1.9-1",
+		"jsonwebtoken": "^8.1.0",
+		"moment": "^2.19.1",
+		"random-key": "^0.3.2",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.49.3",
+		"react-native-call-log": "^1.0.6",
 		"react-native-communications": "^2.2.1",
-		"react-native-local-auth": "^1.5.0",
-		"react-native-passcode-auth": "^1.0.0",
+		"react-native-contacts": "^1.0.2",
+		"react-native-device-info": "^0.12.1",
+		"react-native-get-sms-android": "^1.4.0",
+		"react-native-gifted-chat": "^0.2.9",
+		"react-native-prompt": "^1.0.0",
 		"react-native-router-flux": "^4.0.0-beta.22",
+		"react-native-side-menu": "^1.1.3",
+		"react-native-simple-radio-button": "^2.7.0",
 		"react-native-textinput-effects": "^0.4.1",
 		"react-native-vector-icons": "^4.4.2",
 		"react-redux": "^5.0.6",
 		"redux": "^3.7.2",
 		"redux-thunk": "^2.2.0",
-		"underscore": "^1.8.3"
+		"stream": "^0.0.2",
+		"underscore": "^1.8.3",
+		"util": "^0.10.3"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",

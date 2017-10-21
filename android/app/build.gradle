@@ -137,8 +137,11 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-contacts')
+    compile project(':react-native-get-sms-android')
+    compile project(':react-native-call-log')
+    compile project(':react-native-device-info')
     compile project(':react-native-vector-icons')
-    compile project(':react-native-local-auth')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules

@@ -8,6 +8,8 @@ import reducer from '../reducers';
 import Home from './home';
 import Register from './register';
 import Confirm from './confirm';
+import Chat from './chat';
+import Package from '../components/package';
 
 export const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -18,9 +20,11 @@ export default class App extends Component {
             <Provider store={store}>
               <Router>
                 <Scene key="root">
-                  <Scene key="home" component={Home} hideNavBar hideTabBar/>
-                  <Scene key="register" component={Register} initial hideNavBar hideTabBar/>
+                  <Scene key="home" component={Home} initial hideNavBar hideTabBar/>
+                  <Scene key="register" component={Register} hideNavBar hideTabBar/>
                   <Scene key="confirm" component={Confirm} hideNavBar hideTabBar />
+                  <Scene key="chat" component={Chat} hideNavBar hideTabBar />
+                  <Scene key="plan" component={Package} hideNavBar hideTabBar direction="vertical" />
                 </Scene>
               </Router>
             </Provider>

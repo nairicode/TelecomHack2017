@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image } from 'react-native';
+import { View, Text, TouchableHighlight, Image, Keyboard } from 'react-native';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import _ from 'underscore';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Makiko } from 'react-native-textinput-effects';
+import { Actions } from 'react-native-router-flux';
 
 import ActionCreators from '../actions';
 import Styles from '../styles';
 
-import BeelineLogo from '../img/BeeLine_logo.png';
+import Logo from '../img/Logo.png';
 
 class Confirm extends Component {
 
@@ -28,22 +28,21 @@ class Confirm extends Component {
     }
 
     checkCode (code) {
-        this.props.checkCode(code);
-    }
-
-    componentDidMount () {
-
+        // this.props.checkCode(code);
+        Keyboard.dismiss();
+        this.setState({number: ""});
+        Actions.home();
     }
 
     render() {
 
         return (
             <View style={[Styles.flex, Styles.flexCenter]}>
-                <Image source={BeelineLogo} resizeMode="contain" style={Styles.logoImg}/>
+                <Image source={Logo} resizeMode="contain" style={Styles.logoImg}/>
                 <Makiko
-                    label={'Phone'}
+                    label={'Code'}
                     iconClass={FontAwesomeIcon}
-                    iconName={'phone'}
+                    iconName={'key'}
                     iconColor={'white'}
                     style={Styles.inputWrapper}
                     keyboardType = 'numeric'
